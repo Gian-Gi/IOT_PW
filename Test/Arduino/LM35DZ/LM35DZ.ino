@@ -3,69 +3,41 @@
 #include <Wire.h> 
 
 //----- Sezione IMPOSTAZIONI
-const int ckAutoTest=2; // Porta per la verifica del collegamento devices
-const int ldAutoTest=3; // Led verde autotest
-int checkTest;
 LiquidCrystal_I2C lcd(0x3F,2,1,0,4,5,6,7,3,POSITIVE); // Setta gli indirizzi dell'LCD I2C
 
 
 
-//const int LM35DZ = 0;     // Sensore analogico di temperatura
-//float celsius;
-//float millivolts;
-//int sensor;
+const int LM35DZ = 3;     // Sensore analogico di temperatura
+float celsius;
+float millivolts;
+int sensor;
+String lcd_line1;
+String lcd_line2;
 
 void setup()
 {
-  pinMode(ckAutoTest, INPUT);   // Inizializza IN autotest
-  pinMode(ldAutoTest, OUTPUT);  // Inizializza OUT autotest
-  lcd.begin(16, 2);             // Inizializza lo schermo LCD I2C seriale
-  Serial.begin(9600);         // Inizializza la seriale
-  if (checkArduino())
-  {
-    Serial.print("Check Arduino OK");
-    //checkRaspberry()
-  }
+  lcd.begin(16, 2);         // Inizializza lo schermo LCD I2C seriale
+  Serial.begin(9600);       // Inizializza la seriale
+  setta_lcd();
 }
 
-int checkArduino()
+void setta_lcd()
 {
-  bool returnCheck = false;
-  lcd.home();
-  lcd.print("CK Arduino .....");
-  delay(2000);
-  int autoTest = digitalRead(ckAutoTest);
-  if (autoTest == 1)
-  {
-    digitalWrite(ldAutoTest, 1);
-    lcd.home();
-    lcd.print("CK Arduino .. OK"); 
-    returnCheck = true;
-  }
-  else
-  {
-    lcd.home();
-    lcd.print("CK Arduino  FAIL");
-  }
-  return returnCheck;
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Temp.:");
 }
 
 void loop()
 {
-  
-//  delay(1000);
-//  digitalWrite(ledAutoTest, 0);
-  // Legge il sensore analogico
-  //sensor = analogRead(LM35DZ);
-  // Calcola la tensione in millivolt
-  //millivolts = (sensor / 1023.0) * 5000;
-  // Calcola la temperatura in Celsius
-  //celsius = millivolts / 10.0;
+  sensor = analogRead(LM35DZ);            //Legge il sensore analogico
+  millivolts = (sensor / 1023.0) * 5000;  //Calcola la tensione in millivolt
+  celsius = millivolts / 10.0;            // Calcola la temperatura in Celsius
   // Stampa i dati di controllo
-//  Serial.print(sensor);
-//  Serial.print(" ");
-//  Serial.print(millivolts);
-//  Serial.print(" ");
-//  Serial.println(celsius);
+  lcd.setCursor(7, 0);
+  lcd.print(celsius);
+  lcd.setCursor(13, 0);
+  lcd.write(char(223));     // Carattere °
+  lcd.write("C");
   delay(1000);
 }
