@@ -1,0 +1,28 @@
+
+	PIN ARDUINO
+	-----------
+
+	 0 - RX - None
+	 1 - TX - None
+	 2 -    - Pin IN  : Arduino devices
+	 3 - ~  - GreenLed: Arduino devices check OK
+	 4 -    - DS18B20 : Sensore digitale temperatura
+	 5 - ~  - 
+	 6 - ~  - 
+	 7 -    - 
+	 8 -    - 
+	 9 - ~  - 
+	10 - ~  - 
+	11 - ~  - 
+	12 -    - 
+	13 -    - 
+
+	~ = Pulse Width Modulation (PWM)
+
+	A0 -    - 
+	A1 -    - 
+	A2 -    - 
+	A3 -    - LM35DZ  : Sensore analogico temperatura
+	A4 -    - LCD16X2 : (SDA)
+	A5 -    - LCD16X2 : (SCL)
+

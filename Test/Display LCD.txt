@@ -1,0 +1,8 @@
+﻿0123456789012345
+----------------
+
+Temp.wtr XX.XX°C
+CK devices .. OK
+CK devices FAIL!
+CK devices .....
+Temp.air XX.XX°C
