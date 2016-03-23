@@ -1,0 +1,13 @@
+Project Work - Cronologia
+-------------------------
+
+20160323 - Test Raspberry - Test reboot/shutdown
+20160322 - Test Raspberry - Test Reboot
+                          - Test Shutdown
+20160318 - Test Arduino - Check collegamento devices
+                        - Schema elettronico
+20160316 - Test Arduino - Sensore digitale di temperatura DS18B20
+                        - Schema elettronico
+20160315 - Inizializzazione ambiente
+         - Test Arduino - Sensore analogico LM35DZ
+                        - Schema elettronico LM35DZ

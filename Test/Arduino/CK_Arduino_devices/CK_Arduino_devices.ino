@@ -4,8 +4,8 @@
 
 //----- IMPOSTAZIONI -----
 LiquidCrystal_I2C lcd(0x3F,2,1,0,4,5,6,7,3,POSITIVE); // Setta gli indirizzi dell'LCD I2C
-#define CK_DEVICES_PIN 2  // Pin collegamento devices Arduino
-#define LD_DEVICES_PIN 3  // Led autotest OK (verde)
+#define CK_DEVICES_PIN 4  // Pin collegamento devices Arduino
+#define LD_DEVICES_PIN 5  // Led autotest OK (verde)
 
 //----- SETUP -----
 void setup()

@@ -4,15 +4,15 @@
 
 	 0 - RX - None
 	 1 - TX - None
-	 2 -    - Pin IN  : Arduino devices
-	 3 - ~  - GreenLed: Arduino devices check OK
-	 4 -    - DS18B20 : Sensore digitale temperatura
-	 5 - ~  - 
-	 6 - ~  - 
-	 7 -    - 
-	 8 -    - 
-	 9 - ~  - 
-	10 - ~  - 
+	 2 -    - INTERRUPT 1
+	 3 - ~  - INTERRUPT 2
+	 4 -    - Pin IN   : Arduino devices
+	 5 - ~  - GreenLed : Arduino devices check OK
+	 6 - ~  - Pin IN   : Raspberry ON
+	 7 -    - RgbRed   :
+	 8 -    - RgbGreen :
+	 9 - ~  - RgbBlu   :
+	10 - ~  - DS18B20  : Sensore digitale temperatura
 	11 - ~  - 
 	12 -    - 
 	13 -    - 
